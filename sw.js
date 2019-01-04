@@ -1,6 +1,6 @@
 importScripts('js/libs/sw-utils.js');
 
-const STATIC_CACHE = 'static-v4';
+const STATIC_CACHE = 'static-v5';
 const DYNAMIC_CACHE = 'dynamic-v3';
 const INMUTABLE_CACHE = 'inmutable-v1';
 
@@ -27,7 +27,7 @@ const APP_SHELL_INMUTABLE = [
 
 
 self.addEventListener('install', evento => {
-    const cacheStatic = caches.open( DYNAMIC_CACHE )
+    const cacheStatic = caches.open( STATIC_CACHE )
                         .then( cache => {
                             cache.addAll( APP_SHELL );
                         });
